@@ -12,10 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(cookieParser());
 
-mongoose.connect('mongodb://localhost:27017/secretsApp');
+mongoose.connect('mongodb+srv://agamjot_singh:FTOevKJIIh7vuGe0@cluster0.trhpj0r.mongodb.net/secretsApp?retryWrites=true&w=majority');
 
 // Secret key for JWT
-const JWT_SECRET = 'your-strong-secret-key';
+const JWT_SECRET = 'tutedude-assignment-9';
 
 // Home redirects to login
 app.get('/', (req, res) => res.redirect('/login'));
