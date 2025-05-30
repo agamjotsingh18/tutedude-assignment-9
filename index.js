@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const JWT_SECRET = 'tutedude-assignment-9';
 
 // Home redirects to login
-app.get('/', (req, res) => res.redirect('/login'));
+app.get('/', (req, res) => res.redirect('/register'));
 
 // Render Register
 app.get('/register', (req, res) => res.render('register', { errors: [] }));
