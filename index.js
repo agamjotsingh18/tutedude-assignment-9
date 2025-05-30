@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -13,6 +14,10 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 mongoose.connect('mongodb+srv://agamjot_singh:FTOevKJIIh7vuGe0@cluster0.trhpj0r.mongodb.net/secretsApp?retryWrites=true&w=majority');
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
 
 // Secret key for JWT
 const JWT_SECRET = 'tutedude-assignment-9';
